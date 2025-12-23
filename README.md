@@ -5,7 +5,7 @@ The project demonstrates how even simple heuristics can significantly change sys
 Problem
 Modern software treats energy as an unlimited resource.
 In reality, energy consumption directly affects:
-device longevity
-carbon footprint
-user experience
+device longevity,
+carbon footprint,
+user experience.
 GreenMode explores how task scheduling can become energy-aware, enabling devices to delay, prioritize, or cancel work based on environmental constraints.
