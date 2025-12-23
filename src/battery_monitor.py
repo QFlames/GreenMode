@@ -30,7 +30,7 @@ class BatteryMonitor:
             return None
 
     def is_low_battery(self, threshold=15):
-        info = self.get_battery_info()  # CLEANUP: indentation fixed
+        info = self.get_battery_info()  
         if info is None:
             return False
         return info["percent"] < threshold
@@ -50,7 +50,7 @@ class BatteryMonitor:
             return
 
         if not info["available"]:
-            print("No battery detected (desktop mode)")  # FIX: typo
+            print("No battery detected (desktop mode)")  
             return
 
         percent = info["percent"]
@@ -64,7 +64,7 @@ class BatteryMonitor:
 
         if info["time_left"] is not None:
             hours = info["time_left"] // 3600
-            minutes = (info["time_left"] % 3600) // 60  # FIX: key typo
+            minutes = (info["time_left"] % 3600) // 60  
             print(f"  Time left: {hours}h {minutes}m")
 
         if self.should_save_energy():
@@ -75,5 +75,20 @@ class BatteryMonitor:
             print("  💡 Recommendation: Normal operation")
 
 
+#demo
+if __name__ == "__main__":
+    print("=" * 50)
+    print("🟢 GreenMode Battery Monitor Test")
+    print("=" * 50)
 
-    
+    monitor = BatteryMonitor()
+    for i in range(3):
+        print(f"\n--- Check #{i + 1} ---")
+        monitor.print_status()
+        if i < 2:
+            print("\nWaiting 5 seconds...")
+            time.sleep(5)
+
+    print("\n" + "=" * 50)
+    print("✅ Test complete!")
+    print("=" * 50)    
