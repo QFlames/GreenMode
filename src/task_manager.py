@@ -91,6 +91,7 @@ class TaskManager:
                 print(f"  - {task}") 
 
 
+#demo
 if __name__ == "__main__":
     print("=" * 50)
     print("📋 🟢 GreenMode Task Manager Test")
